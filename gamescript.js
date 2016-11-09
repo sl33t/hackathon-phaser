@@ -37,7 +37,6 @@ start_button.onclick = function() {
 
         songs = [song1];
         notes = game.add.group();
-        keys = game.add.group();
         /*var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow",
             "keyLightBlue","keyLightGreen","keyOrange","keyPink"];
         keys_array.forEach(function(key){
