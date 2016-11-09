@@ -3,7 +3,7 @@
  */
 
 var start_button = document.getElementById("start_button");
-var key_button_dict = {"keyRed": 65, "keyBlue": 83, "keyGreen": 68, "keyYellow": 70};
+var key_button_dict = {"keyRed": 65, "keyBlue": 83, "keyGreen": 68, "keyYellow": 70, "keyLightBlue": 74, "keyLightGreen": 75,"keyOrange": 76,"keyPink": 186};
 
 function removeMenuState() {
     document.getElementById("menuState").style.display = "none";
@@ -18,6 +18,10 @@ start_button.onclick = function() {
         game.load.image("keyBlue", "keyBlue.png");
         game.load.image("keyGreen", "keyGreen.png");
         game.load.image("keyYellow", "keyYellow.png");
+        game.load.image("keyLightBlue", "keyLightBlue.png");
+        game.load.image("keyLightGreen", "keyLightGreen.png");
+        game.load.image("keyOrange", "keyOrange.png");
+        game.load.image("keyPink", "keyPink.png");
     }
 
     function create() {
@@ -33,7 +37,8 @@ start_button.onclick = function() {
         songs = [song1];
         notes = game.add.group();
         keys = game.add.group();
-        var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow","keyRed", "keyBlue", "keyGreen", "keyYellow"];
+        var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow",
+            "keyLightBlue","keyLightGreen","keyOrange","keyPink"];
         for (var key_index = 0; key_index < keys_array.length; key_index++) {
             var key = notes.create(10 + key_index * 100 , game.world.height-110, keys_array[key_index]);
             key.scale.setTo(.2, .2);
