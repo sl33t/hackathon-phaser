@@ -10,6 +10,10 @@ start_button.onclick = function() {
 
     function preload() {
         game.load.audio("song1", "Scott_Holmes_Paint_By_Numbers.mp3");
+        game.load.image("keyRed", "keyRed.png");
+        game.load.image("keyBlue", "keyBlue.png");
+        game.load.image("keyGreen", "keyGreen.png");
+        game.load.image("keyYellow", "keyYellow.png");
     }
 
     function create() {
@@ -17,13 +21,17 @@ start_button.onclick = function() {
         document.onkeydown = keyChange;
         document.onkeyup = keyChange;
 
-        game.stage.backgroundColor = '#FFFFFF';
+        game.stage.backgroundColor = '#B4CDCD';
 
         var song1 = game.add.audio("song1");
 
         songs = [song1];
         notes = game.add.group();
         keys = game.add.group();
+
+        var keyRed = notes.create(10, game.world.height-110, "keyRed");
+        keyRed.scale.setTo(.2, .2);
+        keyRed.immovable = true;
 
         game.sound.setDecodedCallback(songs, startGame, this);
     }
