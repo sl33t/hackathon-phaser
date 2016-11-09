@@ -37,7 +37,6 @@ start_button.onclick = function() {
 
         songs = [song1];
         notes = game.add.group();
-        keys = game.add.group();
         /*var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow",
             "keyLightBlue","keyLightGreen","keyOrange","keyPink"];
         keys_array.forEach(function(key){
@@ -45,6 +44,9 @@ start_button.onclick = function() {
             key.scale.setTo(.15, .15);
             key.immovable = true;
         });*/
+
+        notePad = game.add.sprite(0, game.world.height-70, "notePad");
+        notePad.immovable = true;
 
         game.sound.setDecodedCallback(songs, startGame, this);
     }
