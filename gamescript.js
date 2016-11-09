@@ -13,15 +13,15 @@ start_button.onclick = function() {
     game = new Phaser.Game(815, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
     function preload() {
-        game.load.audio("song1", "Scott_Holmes_Paint_By_Numbers.mp3");
-        game.load.image("keyRed", "keyRed.png");
-        game.load.image("keyBlue", "keyBlue.png");
-        game.load.image("keyGreen", "keyGreen.png");
-        game.load.image("keyYellow", "keyYellow.png");
-        game.load.image("keyLightBlue", "keyLightBlue.png");
-        game.load.image("keyLightGreen", "keyLightGreen.png");
-        game.load.image("keyOrange", "keyOrange.png");
-        game.load.image("keyPink", "keyPink.png");
+        game.load.audio("song1", "songs/Scott_Holmes_Paint_By_Numbers.mp3");
+        game.load.image("keyRed", "images/keyRed.png");
+        game.load.image("keyBlue", "images/keyBlue.png");
+        game.load.image("keyGreen", "images/keyGreen.png");
+        game.load.image("keyYellow", "images/keyYellow.png");
+        game.load.image("keyLightBlue", "images/keyLightBlue.png");
+        game.load.image("keyLightGreen", "images/keyLightGreen.png");
+        game.load.image("keyOrange", "images/keyOrange.png");
+        game.load.image("keyPink", "images/keyPink.png");
     }
 
     function create() {
