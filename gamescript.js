@@ -59,6 +59,11 @@ start_button.onclick = function() {
 function startGame() {
     var song1 = songs.shift();
     song1.play();
+    startNotes();
+}
+
+function startNotes() {
+
 }
 
 function ensure_same_type() {
