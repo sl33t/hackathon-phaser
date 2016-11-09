@@ -9,7 +9,7 @@ function removeMenuState() {
 }
 start_button.onclick = function() {
 
-    game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+    game = new Phaser.Game(815, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
     function preload() {
         game.load.audio("song1", "Scott_Holmes_Paint_By_Numbers.mp3");
@@ -32,10 +32,12 @@ start_button.onclick = function() {
         songs = [song1];
         notes = game.add.group();
         keys = game.add.group();
-
-        var keyRed = notes.create(10, game.world.height-110, "keyRed");
-        keyRed.scale.setTo(.2, .2);
-        keyRed.immovable = true;
+        var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow","keyRed", "keyBlue", "keyGreen", "keyYellow"];
+        for (var key_index = 0; key_index < keys_array.length; key_index++) {
+            var key = notes.create(10 + key_index * 100 , game.world.height-110, keys_array[key_index]);
+            key.scale.setTo(.2, .2);
+            key.immovable = true;
+        }
 
         game.sound.setDecodedCallback(songs, startGame, this);
     }
