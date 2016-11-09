@@ -46,6 +46,9 @@ start_button.onclick = function() {
             key.immovable = true;
         });*/
 
+        notePad = game.add.sprite(0, game.world.height-70, "notePad");
+        notePad.immovable = true;
+
         game.sound.setDecodedCallback(songs, startGame, this);
     }
 
