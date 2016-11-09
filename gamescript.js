@@ -4,6 +4,9 @@
 
 var start_button = document.getElementById("start_button");
 
+function removeMenuState() {
+    document.getElementById("menuState").style.display = "none";
+}
 start_button.onclick = function() {
 
     game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
@@ -13,11 +16,12 @@ start_button.onclick = function() {
     }
 
     function create() {
+        removeMenuState();
         game.physics.startSystem(Phaser.Physics.ARCADE);
         document.onkeydown = keyChange;
         document.onkeyup = keyChange;
 
-        game.stage.backgroundColor = '#FFFFFF';
+        //game.stage.backgroundColor = '#FFFFFF';
 
         var song1 = game.add.audio("song1");
 
