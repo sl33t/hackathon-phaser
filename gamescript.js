@@ -22,6 +22,7 @@ start_button.onclick = function() {
         game.load.image("keyLightGreen", "images/keyLightGreen.png");
         game.load.image("keyOrange", "images/keyOrange.png");
         game.load.image("keyPink", "images/keyPink.png");
+        game.load.image("notePad", "images/notePad.png");
     }
 
     function create() {
