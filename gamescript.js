@@ -13,15 +13,15 @@ start_button.onclick = function() {
     game = new Phaser.Game(815, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
     function preload() {
-        game.load.audio("song1", "Scott_Holmes_Paint_By_Numbers.mp3");
-        game.load.image("keyRed", "keyRed.png");
-        game.load.image("keyBlue", "keyBlue.png");
-        game.load.image("keyGreen", "keyGreen.png");
-        game.load.image("keyYellow", "keyYellow.png");
-        game.load.image("keyLightBlue", "keyLightBlue.png");
-        game.load.image("keyLightGreen", "keyLightGreen.png");
-        game.load.image("keyOrange", "keyOrange.png");
-        game.load.image("keyPink", "keyPink.png");
+        game.load.audio("song1", "songs/Scott_Holmes_Paint_By_Numbers.mp3");
+        game.load.image("keyRed", "images/keyRed.png");
+        game.load.image("keyBlue", "images/keyBlue.png");
+        game.load.image("keyGreen", "images/keyGreen.png");
+        game.load.image("keyYellow", "images/keyYellow.png");
+        game.load.image("keyLightBlue", "images/keyLightBlue.png");
+        game.load.image("keyLightGreen", "images/keyLightGreen.png");
+        game.load.image("keyOrange", "images/keyOrange.png");
+        game.load.image("keyPink", "images/keyPink.png");
     }
 
     function create() {
@@ -37,19 +37,19 @@ start_button.onclick = function() {
         songs = [song1];
         notes = game.add.group();
         keys = game.add.group();
-        var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow",
+        /*var keys_array = ["keyRed", "keyBlue", "keyGreen", "keyYellow",
             "keyLightBlue","keyLightGreen","keyOrange","keyPink"];
-        for (var key_index = 0; key_index < keys_array.length; key_index++) {
-            var key = notes.create(10 + key_index * 100 , game.world.height-110, keys_array[key_index]);
-            key.scale.setTo(.2, .2);
+        keys_array.forEach(function(key){
+            var key = notes.create(20 + (keys_array.indexOf(key) * 100) , game.world.height-110, key);
+            key.scale.setTo(.15, .15);
             key.immovable = true;
-        }
+        });*/
 
         game.sound.setDecodedCallback(songs, startGame, this);
     }
 
     function update() {
-        //var hitPlatform = game.physics.arcade.overlap(notes, keys, ensure_same_type, note_hit);
+
     }
 }
 
@@ -59,7 +59,7 @@ function startGame() {
 }
 
 function ensure_same_type() {
-
+    //key_button_dict[0];
 }
 
 function note_hit() {
@@ -67,34 +67,7 @@ function note_hit() {
 }
 
 function keyChange(event) {
-    console.log(event.type);
-    switch (event.keyCode) {
-        //65 = a
-        case 65:
-            break;
-        //83 = s
-        case 83:
-            break;
-        //68 = d
-        case 68:
-            break;
-        //70 = f
-        case 70:
-            break;
-        //74 = j
-        case 74:
-            break;
-        //75 = k
-        case 75:
-            break;
-        //76 = l
-        case 76:
-            break;
-        //186 = ;
-        case 186:
-            break;
-        //13 = enter
-        case 13:
-            break;
-    }
+    //var hitPlatform = game.physics.arcade.overlap(notes, keys, ensure_same_type, note_hit);
+    //console.log(event.type);
+    //13 = enter
 }
