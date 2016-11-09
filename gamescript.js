@@ -3,6 +3,7 @@
  */
 
 var start_button = document.getElementById("start_button");
+var key_button_dict = {"keyRed": 65, "keyBlue": 83, "keyGreen": 68, "keyYellow": 70};
 
 function removeMenuState() {
     document.getElementById("menuState").style.display = "none";
